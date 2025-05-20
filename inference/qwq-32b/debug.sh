@@ -1,0 +1,1 @@
+python3 -m debugpy --listen 5678 --wait-for-client -m bentoml serve service.py:VLLM
