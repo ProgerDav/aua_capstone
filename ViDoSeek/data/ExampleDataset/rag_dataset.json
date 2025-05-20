@@ -1,0 +1,17 @@
+{
+    "examples": [
+        {
+            "uid": "00a76e3a9a36255616e2dc14a6eb5dde598b321f_1",
+            "query": "Which areas are located on the English Channel coast?",
+            "reference_answer": "Kent, East Sussex, Normandy, Brittany",
+            "meta_info": {
+                "file_name": "00a76e3a9a36255616e2dc14a6eb5dde598b321f.pdf",
+                "reference_page": [
+                    11
+                ],
+                "source_type": "2d_layout",
+                "query_type": "content_extraction"
+            }
+        }
+    ]
+}
