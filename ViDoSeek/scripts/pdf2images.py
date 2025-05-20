@@ -1,7 +1,8 @@
 import os
-from tqdm import tqdm
-from pdf2image import convert_from_path
 from concurrent.futures import ThreadPoolExecutor
+
+from pdf2image import convert_from_path
+from tqdm import tqdm
 
 datasets = ["ViDoSeek", "SlideVQA"]
 

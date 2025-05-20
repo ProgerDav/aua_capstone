@@ -1,6 +1,7 @@
-import requests
 import os
 import zipfile
+
+import requests
 
 
 def download_file(url, output_file):

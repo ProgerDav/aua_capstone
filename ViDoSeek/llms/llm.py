@@ -1,10 +1,11 @@
+import base64
+import os
+import sys
+from io import BytesIO
+from pathlib import Path
+
 import torch
 from PIL import Image
-from pathlib import Path
-import sys
-import base64
-from io import BytesIO
-import os
 
 
 def _encode_image(image_path):
@@ -21,11 +22,8 @@ def _encode_image(image_path):
 
 class Qwen_VL_2_5:
     def __init__(self, model_name="Qwen/Qwen2.5-VL-7B-Instruct"):
-        from transformers import (
-            Qwen2_5_VLForConditionalGeneration,
-            AutoTokenizer,
-            AutoProcessor,
-        )
+        from transformers import (AutoProcessor, AutoTokenizer,
+                                  Qwen2_5_VLForConditionalGeneration)
 
         self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
             model_name,

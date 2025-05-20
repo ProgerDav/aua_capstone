@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
-import json
-import cv2
-import numpy as np
-import fastdeploy as fd
-from PIL import Image
-import io
 import gc
+import io
+import json
+import os
+
+import cv2
+import fastdeploy as fd
+import numpy as np
+from PIL import Image
 
 # ----------------------- Hardcoded Constants -----------------------
 

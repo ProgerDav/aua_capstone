@@ -1,13 +1,11 @@
+import base64
 import json
 import os
-import base64
-from utils.prompt_get_bucket import (
-    get_prompt_to_bucket_wrong_answers,
-    get_prompt_to_bucket_wrong_answers_user,
-)
-from litellm import acompletion
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
+from litellm import acompletion
+from utils.prompt_get_bucket import (get_prompt_to_bucket_wrong_answers,
+                                     get_prompt_to_bucket_wrong_answers_user)
 
 load_dotenv()
 

@@ -1,6 +1,6 @@
-import os
-import json
 import argparse
+import json
+import os
 
 # Define constants
 FOLDER_PATH_PREFIX = "data/ViDoSeek/results"

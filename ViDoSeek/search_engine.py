@@ -1,27 +1,19 @@
-from typing import Optional, List, Mapping, Any, Dict
 import json
-from tqdm import tqdm
 import os
-import torch
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Any, Dict, List, Mapping, Optional
+
 import numpy as np
-from sklearn.mixture import GaussianMixture
-
-from llama_index.core import Settings
-from llama_index.core.query_engine import RetrieverQueryEngine
+import torch
+from llama_index.core import Settings, StorageContext, VectorStoreIndex
 from llama_index.core.indices.query.schema import QueryBundle
-from llama_index.core.schema import (
-    NodeWithScore,
-    BaseNode,
-    MetadataMode,
-    IndexNode,
-    ImageNode,
-    TextNode,
-)
-from llama_index.core import VectorStoreIndex, StorageContext
+from llama_index.core.query_engine import RetrieverQueryEngine
+from llama_index.core.schema import (BaseNode, ImageNode, IndexNode,
+                                     MetadataMode, NodeWithScore, TextNode)
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-
 from llms.vl_embedding import VL_Embedding
+from sklearn.mixture import GaussianMixture
+from tqdm import tqdm
 from utils.format_converter import nodefile2node, nodes2dict
 
 

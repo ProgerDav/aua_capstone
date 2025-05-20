@@ -1,13 +1,13 @@
-from PIL import Image
-import os
 import json
+import os
 import sys
 
-from agent.agent_prompt import seeker_prompt, inspector_prompt, answer_prompt
-from agent.map_dict import arrangement_map_dict, page_map_dict_normal, page_map_dict
-
-from utils.parse_tool import extract_json
+from agent.agent_prompt import answer_prompt, inspector_prompt, seeker_prompt
+from agent.map_dict import (arrangement_map_dict, page_map_dict,
+                            page_map_dict_normal)
+from PIL import Image
 from utils.image_preprosser import concat_images_with_bbox
+from utils.parse_tool import extract_json
 
 
 class Seeker:

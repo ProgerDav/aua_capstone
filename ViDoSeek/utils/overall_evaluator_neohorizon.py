@@ -1,9 +1,9 @@
-import os
-import json
-
 # read
 import argparse
+import json
 import math
+import os
+
 from tqdm import tqdm
 
 

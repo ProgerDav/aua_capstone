@@ -1,9 +1,10 @@
-import json
-import pandas as pd
-from datetime import datetime
-import os
 import argparse
+import json
+import os
+from datetime import datetime
 from functools import reduce
+
+import pandas as pd
 
 
 def parse_arguments():

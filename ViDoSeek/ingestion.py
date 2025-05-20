@@ -1,17 +1,16 @@
-import os
 import json
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from tqdm import tqdm
 from pathlib import Path
-from llama_index.core.ingestion import IngestionPipeline
-from llama_index.core.node_parser import SimpleFileNodeParser
-from llama_index.readers.file import FlatReader
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-from llama_index.core.node_parser import SentenceSplitter
-from llama_index.core.schema import ImageNode
-from llama_index.core import SimpleDirectoryReader
 
+from llama_index.core import SimpleDirectoryReader
+from llama_index.core.ingestion import IngestionPipeline
+from llama_index.core.node_parser import SentenceSplitter, SimpleFileNodeParser
+from llama_index.core.schema import ImageNode
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.readers.file import FlatReader
 from llms.vl_embedding import VL_Embedding
+from tqdm import tqdm
 
 
 class Ingestion:

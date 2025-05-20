@@ -7,15 +7,13 @@ import time
 from typing import Optional, Tuple
 
 from dotenv import load_dotenv
-
-from llama_index.core.schema import NodeWithScore, ImageNode
+from extract_ids_by_score import extract_ids_by_score
+from llama_index.core.schema import ImageNode, NodeWithScore
 from openai import AsyncOpenAI
 from tqdm import tqdm
 
-from ViDoSeek.eval_l0 import DEFAULT_API_PATH, MMRAG_Neohorizon
-
 from ViDoSeek.aggregate_generated_answers import aggregate_results
-from extract_ids_by_score import extract_ids_by_score
+from ViDoSeek.eval_l0 import DEFAULT_API_PATH, MMRAG_Neohorizon
 
 load_dotenv()
 api_key = os.getenv("ACTIVELOOP_TOKEN")
@@ -216,8 +214,7 @@ async def make_request(
                 raw_retrieval_results = metadata.get("full_retrieval_results", None)
             else:
                 relevant_docs = [
-                    {**c.metadata, "text": c.message.content}
-                    for c in stream.choices
+                    {**c.metadata, "text": c.message.content} for c in stream.choices
                 ]
 
             answer = full_answer

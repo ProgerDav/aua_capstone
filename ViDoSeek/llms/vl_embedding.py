@@ -1,24 +1,18 @@
 import asyncio
 from typing import Any, List, Optional, Union
-import torch
-from PIL import Image
-from transformers import AutoModel, AutoTokenizer
-import torch.nn.functional as F
 
-from llama_index.core.embeddings import MultiModalEmbedding
+import torch
+import torch.nn.functional as F
+from colpali_engine.models import (ColPali, ColPaliProcessor, ColQwen2,
+                                   ColQwen2_5, ColQwen2_5_Processor,
+                                   ColQwen2Processor)
+from llama_index.core.base.embeddings.base import Embedding
 from llama_index.core.bridge.pydantic import Field, PrivateAttr
 from llama_index.core.callbacks import CallbackManager
-from llama_index.core.base.embeddings.base import Embedding
+from llama_index.core.embeddings import MultiModalEmbedding
+from PIL import Image
+from transformers import AutoModel, AutoTokenizer
 from transformers.utils.import_utils import is_flash_attn_2_available
-
-from colpali_engine.models import (
-    ColQwen2,
-    ColQwen2Processor,
-    ColPali,
-    ColPaliProcessor,
-    ColQwen2_5,
-    ColQwen2_5_Processor,
-)
 
 
 def weighted_mean_pooling(hidden, attention_mask):

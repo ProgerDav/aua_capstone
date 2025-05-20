@@ -1,13 +1,10 @@
 import json
 import os
-from llama_index.core.schema import (
-    TextNode,
-    NodeRelationship,
-    RelatedNodeInfo,
-    ImageNode,
-)
+from typing import Any, Dict, List, Mapping, Optional
+
 from llama_index.core import Document
-from typing import Optional, List, Mapping, Any, Dict
+from llama_index.core.schema import (ImageNode, NodeRelationship,
+                                     RelatedNodeInfo, TextNode)
 
 
 def nodes2dict(nodes) -> List[Dict[str, Any]]:

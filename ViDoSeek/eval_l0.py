@@ -1,16 +1,16 @@
-import os
 import json
-from tqdm import tqdm
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
-from llama_index.core.schema import NodeWithScore, ImageNode
-from llms.evaluator import Evaluator
-
-from utils.overall_evaluator import eval_search, eval_search_type_wise
-from openai import OpenAI
 from datetime import datetime
 
+from llama_index.core.schema import ImageNode, NodeWithScore
+from llms.evaluator import Evaluator
+from openai import OpenAI
+from tqdm import tqdm
+from utils.overall_evaluator import eval_search, eval_search_type_wise
+
 DEFAULT_API_PATH: str = "https://api.activeloop.ai/"
+
 
 class L0_VLM:
     def __init__(self, model_name: str = None, env: str = None):
